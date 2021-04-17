@@ -1,0 +1,6 @@
+bought 1410 shares at price 14.18 chunk number 1 now own 1410 shares 7052 line
+Price: 14.18 Balance: 80006.2 Shares: 1410 Line: 7052 Chunk: 1410 Next Buy Price 14.32 Previous close None buy_point 14.24
+bought 1410 shares at price 14.36 chunk number 2 now own 2820 shares
+Price: 14.36 Balance: 59758.6 Shares: 2820 Line: 7052 Chunk: 1410 Next Buy Price 14.5 Previous close 14.18 buy_point 14.13
+bought 1410 shares at price 15.52 chunk number 3 now own 4230 shares
+Price: 15.52 Balance: 37875.4 Shares: 4230 Line: 7052 Chunk: 1410 Next Buy Price 15.68 Previous close 14.36 buy_point 13.64

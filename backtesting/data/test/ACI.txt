@@ -1,0 +1,3 @@
+Price: 19.39 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close None buy_point nan
+Price: 19.71 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 19.39 buy_point nan
+Price: 19.32 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 19.71 buy_point nan

@@ -1,0 +1,1 @@
+Price: 2.69 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close None buy_point 2.69

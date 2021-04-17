@@ -13,6 +13,12 @@ EXHAUSTED=0
         echo "Bad data, removing."
         rm "raw/$ticker.json"
       fi
+
+      if [ ! -s "raw/$ticker.json" ]
+      then
+        echo "Empty file, removing"
+        rm "raw/$ticker.json"
+      fi
     fi
   
     if ! test -f "raw/$ticker.json"

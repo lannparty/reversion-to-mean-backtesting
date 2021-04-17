@@ -1,0 +1,46 @@
+Price: 2.04 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close None buy_point 0.33
+Price: 1.88 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 2.04 buy_point 0.39
+Price: 1.81 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.88 buy_point 0.42
+Price: 2.01 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.81 buy_point 0.35
+Price: 2.09 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 2.01 buy_point 0.33
+Price: 2.08 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 2.09 buy_point 0.34
+Price: 1.93 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 2.08 buy_point 0.4
+Price: 1.8101 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.93 buy_point 0.45
+Price: 1.8 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.8101 buy_point 0.46
+Price: 1.6799 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.8 buy_point 0.51
+Price: 1.75 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.6799 buy_point 0.49
+Price: 1.46 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.75 buy_point 0.6
+Price: 1.392 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.46 buy_point 0.63
+Price: 1.09 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.392 buy_point 0.74
+Price: 1.26 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.09 buy_point 0.68
+Price: 1.19 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.26 buy_point 0.71
+Price: 1.1371 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.19 buy_point 0.73
+Price: 1.15 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.1371 buy_point 0.73
+Price: 1.25 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.15 buy_point 0.69
+Price: 1.31 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.25 buy_point 0.67
+Price: 1.24 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.31 buy_point 0.7
+Price: 1.1401 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.24 buy_point 0.74
+Price: 1.13 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.1401 buy_point 0.75
+Price: 1.28 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.13 buy_point 0.7
+Price: 1.0297 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.28 buy_point 0.79
+Price: 1.05 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.0297 buy_point 0.79
+Price: 0.9305 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 1.05 buy_point 0.84
+Price: 0.89 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 0.9305 buy_point 0.85
+Price: 0.86 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 0.89 buy_point 0.86
+Price: 0.87 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 0.86 buy_point 0.86
+Price: 0.9098 Balance: 100000.0 Shares: 0 Line: None Chunk: None Next Buy Price 0 Previous close 0.87 buy_point 0.85
+bought 24411 shares at price 0.8193 chunk number 1 now own 24411 shares 122055 line
+Price: 0.8193 Balance: 80000.07 Shares: 24411 Line: 122055 Chunk: 24411 Next Buy Price 0.83 Previous close 0.9098 buy_point 0.88
+Price: 0.82 Balance: 80000.07 Shares: 24411 Line: 122055 Chunk: 24411 Next Buy Price 0.83 Previous close 0.8193 buy_point 0.88
+bought 24411 shares at price 0.91 chunk number 2 now own 48822 shares
+Price: 0.91 Balance: 57786.06 Shares: 48822 Line: 122055 Chunk: 24411 Next Buy Price 0.92 Previous close 0.82 buy_point 0.85
+bought 24411 shares at price 1.05 chunk number 3 now own 73233 shares
+Price: 1.05 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 0.91 buy_point 0.8
+Price: 1.05 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 1.05 buy_point 0.8
+Price: 1.04 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 1.05 buy_point 0.81
+Price: 1.04 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 1.04 buy_point 0.81
+Price: 1.04 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 1.04 buy_point 0.81
+Price: 0.9961 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 1.04 buy_point 0.83
+Price: 0.9961 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 0.9961 buy_point 0.84
+Price: 0.9961 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 0.9961 buy_point 0.84
+Price: 0.952 Balance: 32154.51 Shares: 73233 Line: 122055 Chunk: 24411 Next Buy Price 1.06 Previous close 0.9961 buy_point 0.85
