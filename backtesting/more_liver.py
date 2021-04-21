@@ -5,91 +5,97 @@ import math
 import matplotlib.pyplot as plt
 import sys
 
-# Sell at 200 SMA cross, with chunks.
-def more_liver_test(dataframe, signal):
-    balance = 100000.00
-    shares = 0
-    line = None
-    chunk = None
-    chunk_counter = 5
-    next_buy_price = 0
-    previous_close = None
+# Buy at quantile below 200 SMA in chunks and sell at cross.
+def more_liver_test(tickers, signal):
+    for ticker in tickers:
+        with open('data/raw/' + ticker + '.json') as file:
+            data = json.loads(file.read())
 
-    black_swan = parsed[parsed[signal + ' Delta'] < 0].dropna()[signal + ' Delta'].quantile(.1)
+        raw = pd.DataFrame(data["Time Series (Daily)"])
+        parsed = raw.T[['4. close']].astype(float)
+        parsed = parsed.iloc[::-1]
 
-    for row_index, row_value in dataframe.iterrows():
-        price = row_value['4. close']
-        buy_point = round(row_value[signal] + (price * black_swan), 2)
+        parsed = parsed.rename(columns={'4. close': ticker})
+        signal_sma = ticker + ' SMA(' + signal + ')'
+        signal_sma_delta = ticker + ' SMA(' + signal + ') Delta'
+        parsed[signal_sma] = parsed[ticker].rolling(int(signal)).mean()
+        parsed[signal_sma_delta] = (parsed[ticker] - parsed[signal_sma]) / parsed[ticker]
+        parsed = parsed[parsed[signal_sma].notna()]
 
-        if shares == 0:
-            if price < buy_point and price > next_buy_price and chunk_counter > 0:
-                if line == None:
-                    line = math.floor((balance/price))
+    #balance = 100000.00
+    #shares = 0
+    #line = None
+    #chunk = None
+    #chunk_counter = 5
+    #next_buy_price = 0
+    #previous_close = None
 
-                if chunk == None:
-                    chunk = math.floor(line / 5)
+    #black_swan = parsed[parsed[signal_sma_delta] < 0].dropna()[signal_sma_delta].quantile(.1)
 
-                balance -= round((chunk * price), 2)
-                shares += chunk
-                next_buy_price = round(price + (price * .01), 2)
-                chunk_counter -= 1
-                dataframe.loc[row_value.name, 'bought'] = price
-                print("bought", chunk, "shares", "at price", price, "chunk number", 5 - chunk_counter, "now own", shares, "shares", line, "line")
-        elif shares > 0:
-            if price > next_buy_price and chunk_counter > 0:
-                if line == None:
-                    line = math.floor((balance/price))
+    #for row_index, row_value in parsed.iterrows():
+    #    price = row_value[ticker]
+    #    buy_point = round(row_value[signal_sma] + (price * black_swan), 2)
 
-                if chunk == None:
-                    chunk = math.floor(line / 5)
+    #    if shares == 0:
+    #        if price < buy_point and price > next_buy_price and chunk_counter > 0:
+    #            if line == None:
+    #                line = math.floor((balance/price))
 
-                balance -= round((chunk * price), 2)
-                shares += chunk
-                next_buy_price = round(price + (price * .01), 2)
-                chunk_counter -= 1
-                dataframe.loc[row_value.name, 'bought'] = price
-                print("bought", chunk, "shares", "at price", price, "chunk number", 5 - chunk_counter, "now own", shares, "shares")
+    #            if chunk == None:
+    #                chunk = math.floor(line / 5)
 
-            elif price > row_value[signal] and shares > 0:
-                print("sold", shares, "shares at", price, "per shares", "total", round((shares* price), 2))
-                balance += round((shares * price), 2)
-                line = None
-                chunk = None
-                shares = 0
-                chunk_counter = 5            
-                next_buy_price = 0
-                dataframe.loc[row_value.name, 'sold'] = price
+    #            balance -= round((chunk * price), 2)
+    #            shares += chunk
+    #            next_buy_price = round(price + (price * .01), 2)
+    #            chunk_counter -= 1
+    #            parsed.loc[row_value.name, 'bought'] = price
+    #            #print("bought", chunk, "shares", "at price", price, "chunk number", 5 - chunk_counter, "now own", shares, "shares", line, "line")
+    #    elif shares > 0:
+    #        if price > next_buy_price and chunk_counter > 0:
+    #            if line == None:
+    #                line = math.floor((balance/price))
 
-        print("Price:", row_value['4. close'], "Balance:", round(balance, 2), "Shares:", shares, "Line:", line, "Chunk:", chunk, "Next Buy Price", next_buy_price, "Previous close", previous_close, "buy_point", buy_point)
-        previous_close = price
-    return dataframe
+    #            if chunk == None:
+    #                chunk = math.floor(line / 5)
 
-with open('data/raw/' + sys.argv[1] + '.json') as file:
-    data = json.loads(file.read())
+    #            balance -= round((chunk * price), 2)
+    #            shares += chunk
+    #            next_buy_price = round(price + (price * .01), 2)
+    #            chunk_counter -= 1
+    #            parsed.loc[row_value.name, 'bought'] = price
+    #            #print("bought", chunk, "shares", "at price", price, "chunk number", 5 - chunk_counter, "now own", shares, "shares")
 
-raw = pd.DataFrame(data["Time Series (Daily)"])
-parsed = raw.T[['4. close']].astype(float)
-parsed = parsed.iloc[::-1]
+    #        elif price > row_value[signal_sma] and shares > 0:
+    #            #print("sold", shares, "shares at", price, "per shares", "total", round((shares* price), 2))
+    #            balance += round((shares * price), 2)
+    #            line = None
+    #            chunk = None
+    #            shares = 0
+    #            chunk_counter = 5            
+    #            next_buy_price = 0
+    #            parsed.loc[row_value.name, 'sold'] = price
 
-signal = 200
-signal_sma = 'SMA(' + str(signal) + ')'
-signal_sma_delta = 'SMA(' + str(signal) + ') Delta'
+    #    #print("Price:", row_value[ticker], "Balance:", round(balance, 2), "Shares:", shares, "Line:", line, "Chunk:", chunk, "Next Buy Price", next_buy_price, "Previous close", previous_close, "buy_point", buy_point)
+    #    previous_close = price
+    return parsed
 
-parsed[signal_sma] = parsed['4. close'].rolling(signal).mean()
-
-parsed[signal_sma_delta] = (parsed['4. close'] - parsed[signal_sma]) / parsed['4. close']
-
-parsed = parsed[parsed[signal_sma].notna()]
+signal = str(200)
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-parsed = more_liver_test(parsed, signal_sma)
+tickers = ['IBM', 'MDC', 'MFT', 'MCRI']
+#for ticker in targets:
+#    parsed = more_liver_test(ticker, signal)
 
-fig, ax = plt.subplots()
-parsed.plot(y=['4. close'], color='black', ax=ax)
-parsed.plot(y=[signal_sma], color='blue', ax=ax)
-parsed.plot(y=['bought'], style='go', ax=ax)
-parsed.plot(y=['sold'], style='ro', ax=ax)
+parsed = more_liver_test(tickers, signal)
+print(parsed)
 
-plt.show()
+#fig, ax = plt.subplots()
+#parsed.plot(y=['4. close'], color='black', ax=ax)
+#parsed.plot(y=[short_term_signal_sma], color='blue', ax=ax)
+#parsed.plot(y=[signal_sma], color='blue', ax=ax)
+#parsed.plot(y=['bought'], style='go', ax=ax)
+#parsed.plot(y=['sold'], style='ro', ax=ax)
+
+#plt.show()
