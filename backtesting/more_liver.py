@@ -5,8 +5,8 @@ import math
 import matplotlib.pyplot as plt
 import sys
 
-# Buy at quantile below 200 SMA in chunks and sell at cross.
-def more_liver_test(tickers, signal):
+# Dollar cost average at above 10 day sma starting at quantile below 200 SMA in chunks and trailing stop loss at cross.
+def more_liver_test(tickers, signal, short_term_signal):
     with open('data/raw/IBM.json') as file:
         data = json.loads(file.read())
     parsed = pd.DataFrame(data["Time Series (Daily)"])
@@ -28,65 +28,78 @@ def more_liver_test(tickers, signal):
 
         signal_sma = ticker + ' SMA(' + signal + ')'
         signal_sma_delta = ticker + ' SMA(' + signal + ') Delta'
+        short_term_signal_sma = ticker + ' SMA(' + short_term_signal + ')' 
         parsed[signal_sma] = parsed[ticker].rolling(int(signal)).mean()
         parsed[signal_sma_delta] = (parsed[ticker] - parsed[signal_sma]) / parsed[ticker]
+        parsed[short_term_signal_sma] = parsed[ticker].rolling(int(short_term_signal)).mean()
         parsed = parsed[parsed[signal_sma].notna()]
 
-        black_swan[ticker] = parsed[parsed[signal_sma_delta] < 0].dropna()[signal_sma_delta].quantile(.3)
+        black_swan[ticker] = parsed[parsed[signal_sma_delta] < 0].dropna()[signal_sma_delta].quantile(.5)
 
     balance = 100000.00
-    chunk = 5000.00
+    chunk = 20000.00
     shares = {}
-    next_buy_price = {}
     buy_point = {}
+    previous_bought_price = {}
 
     for ticker in tickers:
         shares[ticker] = 0
-        next_buy_price[ticker] = 0
 
     for row_index, row_value in parsed.iterrows():
         for ticker in tickers:
             price = row_value[ticker]
             signal_sma = ticker + ' SMA(' + signal + ')'
+            short_term_signal_sma = ticker + ' SMA(' + short_term_signal + ')'
             buy_point[ticker] = round(row_value[signal_sma] + (price * black_swan[ticker]), 2)
             shares_to_buy = math.floor(chunk / price)
 
             if shares[ticker] == 0 and balance > chunk:
-                if price < buy_point[ticker] and price > next_buy_price[ticker]:
+                if price < buy_point[ticker] and price:
                     shares_to_buy = math.floor(chunk / price)
 
                     balance -= round((shares_to_buy * price), 2)
                     shares[ticker] += shares_to_buy
+                    previous_bought_price[ticker] = price
 
-                    next_buy_price[ticker] = round(price + (price * .01), 2)
                     parsed.loc[row_value.name, ticker + 'bought'] = price
                     print("Balance", balance, "bought", shares_to_buy, "shares of", ticker, "at price", price, "now own", shares[ticker], "shares", row_index)
 
             elif shares[ticker] > 0:
+                if price < previous_bought_price[ticker] and price > row_value[short_term_signal_sma]:
+                    shares_to_buy = math.floor(chunk / price)
+                    balance -= round((shares_to_buy * price), 2)
+                    shares[ticker] += shares_to_buy
+                    previous_bought_price[ticker] = price
+                    
+                    parsed.loc[row_value.name, ticker + 'bought'] = price
+                    print("Balance", balance, "bought", shares_to_buy, "shares of", ticker, "at price", price, "now own", shares[ticker], "shares", row_index)
+
                 if price > row_value[signal_sma] and shares[ticker] > 0:
-                    print("sold", shares[ticker], "shares of", ticker, "at", price, "per shares", "total", round((shares[ticker] * price), 2))
                     balance += round((shares[ticker] * price), 2)
                     shares[ticker] = 0
-                    next_buy_price[ticker] = 0
-                    parsed.loc[row_value.name, ticker + 'sold'] = price
 
-            print(ticker, "Price:", row_value[ticker], "Balance:", round(balance, 2), "Shares:", shares, "Chunk:", chunk, "Next Buy Price", next_buy_price, "buy_point", buy_point, row_index)
+                    parsed.loc[row_value.name, ticker + 'sold'] = price
+                    print("sold", shares[ticker], "shares of", ticker, "at", price, "per shares", "total", round((shares[ticker] * price), 2))
+
+            print(ticker, "Price:", row_value[ticker], "Balance:", round(balance, 2), "Shares:", shares, "Chunk:", chunk, "buy_point", buy_point, row_index)
     return parsed
 
 signal = str(200)
+short_term_signal = str(10)
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
 tickers = ['ILMN']
 
-parsed = more_liver_test(tickers, signal)
+parsed = more_liver_test(tickers, signal, short_term_signal)
 
 fig, ax = plt.subplots()
 
 for ticker in tickers:
     parsed.plot(y=[ticker], color='black', ax=ax)
     parsed.plot(y=[ticker + ' SMA(' + signal + ')'], color='blue', ax=ax)
+    parsed.plot(y=[ticker + ' SMA(' + short_term_signal + ')'], color='purple', ax=ax)
 
 for ticker in tickers:
     parsed.plot(y=[ticker + 'bought'], style='go', ax=ax)

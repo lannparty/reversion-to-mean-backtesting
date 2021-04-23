@@ -57,7 +57,7 @@ if __name__ == "__main__":
             print(income_statement)
             if isinstance(income_statement, pd.DataFrame):
                 income_statement.to_csv("income-statement/" + symbol + ".out")
-            elif income_statement == "Income Statement data unavailable for " + symbol:
+            elif "Income Statement data unavailable for" in income_statement:
                 income_statement_unavailable[symbol] = True
                 with open('financials-unavailable/income-statement-unavailable.json', 'w+') as target:
                     json.dump(income_statement_unavailable, target)
@@ -70,7 +70,7 @@ if __name__ == "__main__":
             print(balance_sheet)
             if isinstance(balance_sheet, pd.DataFrame):
                 balance_sheet.to_csv("balance-sheet/" + symbol + ".out")
-            elif balance_sheet == "Balance Sheet data unavailable for " + symbol:
+            elif "Balance Sheet data unavailable for" in balance_sheet:
                 balance_sheet_unavailable[symbol] = True
                 with open('financials-unavailable/balance-sheet-unavailable.json', 'w+') as target:
                     json.dump(balance_sheet_unavailable, target)
@@ -83,7 +83,7 @@ if __name__ == "__main__":
             print(cash_flow)
             if isinstance(cash_flow, pd.DataFrame):
                 cash_flow.to_csv("cash-flow/" + symbol + ".out")
-            elif cash_flow == "Cash Flow data unavailable for " + symbol:
+            elif "Cash Flow data unavailable for" in cash_flow:
                 cash_flow_unavailable[symbol] = True
                 with open('financials-unavailable/cash-flow-unavailable.json', 'w+') as target:
                     json.dump(cash_flow_unavailable, target)
