@@ -103,16 +103,15 @@ def more_liver_test(tickers, signal, short_term_signal, chunk_size, rarity, trai
             previous_close[ticker] = price
     return parsed
 
-signal = str(200)
-short_term_signal = str(10)
-chunk_size = .25
-rarity = .8
-trailing_stop_loss = .01
-
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-tickers = ['MDC','DGII','SRT','CECE','LH','ELS','BPT','RFI','VFL','CCNE','UBP','QUIK','LCUT','AVA','SASR']
+signal = str(200)
+short_term_signal = str(10)
+chunk_size = .1
+rarity = .5
+trailing_stop_loss = .01
+tickers = ['ILMN']
 
 parsed = more_liver_test(tickers, signal, short_term_signal, chunk_size, rarity, trailing_stop_loss)
 
@@ -122,8 +121,6 @@ for ticker in tickers:
     parsed.plot(y=[ticker], color='black', ax=ax)
     parsed.plot(y=[ticker + ' SMA(' + signal + ')'], color='blue', ax=ax)
     parsed.plot(y=[ticker + ' SMA(' + short_term_signal + ')'], color='purple', ax=ax)
-
-for ticker in tickers:
     parsed.plot(y=[ticker + 'bought'], style='go', ax=ax)
     parsed.plot(y=[ticker + 'sold'], style='ro', ax=ax)
 
