@@ -1,0 +1,3 @@
+symbol,asOfDate,periodType,currencyCode,BeginningCashPosition,CashFlowFromContinuingOperatingActivities,ChangeInCashSupplementalAsReported,ChangeInPayablesAndAccruedExpense,ChangeInPrepaidAssets,ChangeInWorkingCapital,ChangesInCash,EndCashPosition,FinancingCashFlow,FreeCashFlow,InvestingCashFlow,NetIncome,NetIncomeFromContinuingOperations,OperatingCashFlow,OtherNonCashItems
+ALUS,2020-12-31,12M,USD,2282362.0,-1911404.0,-1911404.0,3400239.0,-121118.0,3279121.0,-1911404.0,370958.0,0.0,-1911404.0,0.0,-3186865.0,-3186865.0,-1911404.0,-2003660.0
+ALUS,2020-12-31,TTM,USD,2282362.0,-1911404.0,-1911404.0,3400239.0,-121118.0,3279121.0,-1911404.0,370958.0,0.0,-1911404.0,0.0,-3186865.0,-3186865.0,-1911404.0,-2003660.0
