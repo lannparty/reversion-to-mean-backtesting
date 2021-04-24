@@ -50,6 +50,8 @@ if __name__ == "__main__":
            cash_flow_unavailable[symbol] = False 
 
     for symbol in symbols:
+        if (path.exists("income-statement/" + symbol + ".out") or income_statement_unavailable[symbol] == True) and (path.exists("balance-sheet/" + symbol + ".out") or balance_sheet_unavailable[symbol] == True) and (path.exists("cash-flow/" + symbol + ".out") or cash_flow_unavailable[symbol] == True):
+            continue
         print(symbol)
         NASDAQ = Ticker(symbol, validate=True, progress=True)
         if not path.exists("income-statement/" + symbol + ".out") and income_statement_unavailable[symbol] == False:
