@@ -1,0 +1,6 @@
+symbol,asOfDate,periodType,currencyCode,AmortizationCashFlow,AmortizationOfIntangibles,BeginningCashPosition,CashDividendsPaid,CashFlowFromContinuingFinancingActivities,CashFlowFromContinuingOperatingActivities,ChangeInCashSupplementalAsReported,ChangesInCash,DepreciationAmortizationDepletion,DepreciationAndAmortization,EndCashPosition,FinancingCashFlow,FreeCashFlow,NetIncome,NetIncomeFromContinuingOperations,OperatingCashFlow
+CRT,2017-12-31,12M,USD,-592466.0,-592466.0,9903800.0,-6053790.0,-6053790.0,5461324.0,-592466.0,-592466.0,-592466.0,-592466.0,9311334.0,-6053790.0,5461324.0,6053790.0,6053790.0,5461324.0
+CRT,2018-12-31,12M,USD,,,,,,,,,,,,,,8558526.0,,
+CRT,2019-12-31,12M,USD,,,,,,,,,,,,,,5257032.0,,
+CRT,2020-12-31,12M,USD,,,,,,,,,,,,,,4674672.0,,
+CRT,2020-12-31,TTM,USD,,,,,,,,,,,,,,4674672.0,,

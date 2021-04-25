@@ -1,0 +1,5 @@
+symbol,asOfDate,periodType,currencyCode,BeginningCashPosition,CashFlowFromContinuingOperatingActivities,ChangeInAccruedExpense,ChangeInCashSupplementalAsReported,ChangeInPayablesAndAccruedExpense,ChangeInWorkingCapital,EndCashPosition,FreeCashFlow,NetIncome,NetIncomeFromContinuingOperations,OperatingCashFlow
+EPWR,2018-12-31,12M,USD,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+EPWR,2019-12-31,12M,USD,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+EPWR,2020-12-31,12M,USD,0.0,0.0,3936.0,0.0,3936.0,3936.0,0.0,0.0,-3936.0,-3936.0,0.0
+EPWR,2020-12-31,TTM,USD,0.0,0.0,3936.0,0.0,3936.0,3936.0,0.0,0.0,-3936.0,-3936.0,0.0
