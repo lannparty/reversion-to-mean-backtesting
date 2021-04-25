@@ -1,0 +1,3 @@
+symbol,asOfDate,periodType,currencyCode,NetIncome
+BFLY,2020-12-31,12M,USD,-162745000.0
+BFLY,2020-12-31,TTM,USD,-162745000.0
