@@ -1,0 +1,5 @@
+symbol,asOfDate,periodType,currencyCode,BeginningCashPosition,CashDividendsPaid,ChangeInOtherCurrentAssets,ChangeInOtherCurrentLiabilities,ChangeInPayable,ChangeInReceivables,ChangeInWorkingCapital,ChangesInCash,CommonStockDividendPaid,EndCashPosition,FinancingCashFlow,FreeCashFlow,GainLossOnInvestmentSecurities,NetIncome,NetIncomeFromContinuingOperations,NetOtherFinancingCharges,OperatingCashFlow,OtherCashAdjustmentOutsideChangeinCash,OtherNonCashItems
+MHI,2018-04-30,12M,USD,,,,,,,,,,,,,,10912117.0,,,,,
+MHI,2019-04-30,12M,USD,,,,,,,,,,,,,,21166907.0,,,,,
+MHI,2020-04-30,12M,USD,0.0,-12979644.0,78714.0,0.0,-37253.0,404898.0,446359.0,7109884.0,-12979644.0,3219402.0,-13283875.0,20393759.0,14545536.0,5292020.0,5292020.0,-304231.0,20393759.0,-3890482.0,109844.0
+MHI,2020-10-31,TTM,USD,,,,,,,,,,,,,,8984838.0,,,,,
