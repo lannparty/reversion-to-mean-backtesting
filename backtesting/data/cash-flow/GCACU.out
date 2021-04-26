@@ -1,0 +1,4 @@
+symbol,asOfDate,periodType,currencyCode,BeginningCashPosition,CashFlowFromContinuingFinancingActivities,CashFlowFromContinuingOperatingActivities,ChangeInCashSupplementalAsReported,ChangesInCash,CommonStockIssuance,EndCashPosition,FinancingCashFlow,FreeCashFlow,IncomeTaxPaidSupplementalData,IssuanceOfCapitalStock,IssuanceOfDebt,NetCommonStockIssuance,NetIncome,NetIncomeFromContinuingOperations,NetIssuancePaymentsOfDebt,NetOtherFinancingCharges,NetShortTermDebtIssuance,OperatingCashFlow,ShortTermDebtIssuance
+GCACU,2019-03-31,12M,USD,3467.0,0.0,-709.0,-709.0,-709.0,0.0,2758.0,0.0,-709.0,32.0,0.0,0.0,0.0,-709.0,-709.0,0.0,,0.0,-709.0,0.0
+GCACU,2020-03-31,12M,USD,2758.0,9000.0,-9715.0,-715.0,-715.0,0.0,2043.0,9000.0,-9715.0,32.0,0.0,0.0,0.0,-9715.0,-9715.0,0.0,9000.0,0.0,-9715.0,0.0
+GCACU,2020-12-31,TTM,USD,2614.0,83986.0,-685.0,83301.0,83301.0,-4914.0,85915.0,83986.0,-685.0,0.0,-4914.0,135325.0,-4914.0,-685.0,-685.0,135325.0,,135325.0,-685.0,135325.0

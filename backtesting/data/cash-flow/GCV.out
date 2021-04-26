@@ -1,0 +1,6 @@
+symbol,asOfDate,periodType,currencyCode,BeginningCashPosition,CashDividendsPaid,ChangeInAccruedExpense,ChangeInCashSupplementalAsReported,ChangeInOtherCurrentAssets,ChangeInOtherCurrentLiabilities,ChangeInPayable,ChangeInPrepaidAssets,ChangeInReceivables,ChangeInWorkingCapital,ChangesInCash,CommonStockDividendPaid,EndCashPosition,FinancingCashFlow,FreeCashFlow,GainLossOnInvestmentSecurities,NetIncome,NetIncomeFromContinuingOperations,NetOtherFinancingCharges,OperatingCashFlow,OtherNonCashItems
+GCV,2017-12-31,12M,USD,,,,,,,,,,,,,,,,,12100835.0,,,,
+GCV,2018-12-31,12M,USD,,,,,,,,,,,,,,,,,-3549673.0,,,,
+GCV,2019-12-31,12M,USD,,,,,,,,,,,,,,,,,26161589.0,,,,
+GCV,2020-12-31,12M,USD,1013678.0,-9034265.0,61752.0,-1013201.0,-2946.0,0.0,-279608.0,-3456.0,255980.0,31722.0,-1013201.0,-9034265.0,477.0,-10274265.0,9261064.0,-20221832.0,29331910.0,29331910.0,-1240000.0,9261064.0,119264.0
+GCV,2020-12-31,TTM,USD,1013678.0,-9034265.0,61752.0,-1013201.0,-2946.0,0.0,-279608.0,-3456.0,255980.0,31722.0,-1013201.0,-9034265.0,477.0,-10274265.0,9261064.0,-20221832.0,29331910.0,29331910.0,-1240000.0,9261064.0,119264.0

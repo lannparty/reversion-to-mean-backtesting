@@ -1,0 +1,6 @@
+symbol,asOfDate,periodType,currencyCode,CashDividendsPaid,ChangeInAccruedExpense,ChangeInCashSupplementalAsReported,ChangeInOtherCurrentLiabilities,ChangeInPayable,ChangeInPrepaidAssets,ChangeInReceivables,ChangeInWorkingCapital,ChangesInCash,CommonStockDividendPaid,CommonStockPayments,EndCashPosition,FinancingCashFlow,FreeCashFlow,GainLossOnInvestmentSecurities,IssuanceOfCapitalStock,NetCommonStockIssuance,NetIncome,NetIncomeFromContinuingOperations,NetOtherFinancingCharges,NetPreferredStockIssuance,OperatingCashFlow,OtherNonCashItems,PreferredStockIssuance,PreferredStockPayments,RepurchaseOfCapitalStock
+GRX,2017-12-31,12M,USD,,,,,,,,,,,,,,,,,,31689050.0,,,,,,,,
+GRX,2018-12-31,12M,USD,,,,,,,,,,,,,,,,,,-2279143.0,,,,,,,,
+GRX,2019-12-31,12M,USD,,,,,,,,,,,,,,,,,,53155584.0,,,,,,,,
+GRX,2020-12-31,12M,USD,-10418876.0,114996.0,11786.0,50061.0,2988211.0,-5499.0,-4730390.0,-1582621.0,11786.0,-10418876.0,-7596055.0,11786.0,-45223877.0,45235663.0,25306120.0,40000000.0,-7596055.0,24182005.0,21578044.0,-44785.0,-27036075.0,45235663.0,-65880.0,40000000.0,-67036075.0,-74632130.0
+GRX,2020-12-31,TTM,USD,-10418876.0,114996.0,11786.0,50061.0,2988211.0,-5499.0,-4730390.0,-1582621.0,11786.0,-10418876.0,-7596055.0,11786.0,-45223877.0,45235663.0,25306120.0,40000000.0,-7596055.0,24182005.0,21578044.0,-44785.0,-27036075.0,45235663.0,-65880.0,40000000.0,-67036075.0,-74632130.0
