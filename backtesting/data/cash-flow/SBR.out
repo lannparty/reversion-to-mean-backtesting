@@ -1,0 +1,6 @@
+symbol,asOfDate,periodType,currencyCode,AmortizationCashFlow,AmortizationOfIntangibles,BeginningCashPosition,CashDividendsPaid,DepreciationAmortizationDepletion,DepreciationAndAmortization,EndCashPosition,NetIncome,NetIncomeFromContinuingOperations,OtherCashAdjustmentOutsideChangeinCash
+SBR,2017-12-31,12M,USD,-28685.0,-28685.0,4423299.0,-34529287.0,-28685.0,-28685.0,4594384.0,34729057.0,34729057.0,171085.0
+SBR,2018-12-31,12M,USD,,,,,,,,49929702.0,,
+SBR,2019-12-31,12M,USD,,,,,,,,44035987.0,,
+SBR,2020-12-31,12M,USD,,,,,,,,33306627.0,,
+SBR,2020-12-31,TTM,USD,,,,,,,,33306627.0,,

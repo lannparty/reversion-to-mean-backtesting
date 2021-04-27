@@ -1,0 +1,6 @@
+symbol,asOfDate,periodType,currencyCode,AmortizationOfSecurities,AssetImpairmentCharge,BeginningCashPosition,CashDividendsPaid,CashFlowFromContinuingFinancingActivities,ChangeInCashSupplementalAsReported,ChangesInCash,FinancingCashFlow,FreeCashFlow,NetIncome,NetIncomeFromContinuingOperations,OperatingCashFlow,OtherCashAdjustmentOutsideChangeinCash
+PVL,2017-12-31,12M,USD,-11757051.0,0.0,107324542.0,-44744073.0,-44744073.0,-11757051.0,-11757051.0,-44744073.0,32987022.0,44744073.0,44744073.0,32987022.0,-1467558.0
+PVL,2018-12-31,12M,USD,,,,,,,,,,14354736.0,,,
+PVL,2019-12-31,12M,USD,,,,,,,,,,9519246.0,,,
+PVL,2020-12-31,12M,USD,,,,,,,,,,5023591.0,,,
+PVL,2020-12-31,TTM,USD,,,,,,,,,,5023591.0,,,
