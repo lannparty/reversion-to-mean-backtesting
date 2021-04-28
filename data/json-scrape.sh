@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for key in `cat keys.csv`
+for key in `cat alpha-advantage-keys.csv`
 do
 EXHAUSTED=0
   for ticker in `cat tickers.csv`
