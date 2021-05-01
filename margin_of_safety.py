@@ -7,25 +7,45 @@ import json
 import pandas as pd
 from os import path
 
+safe = {}
+
 with open('data/stocks.json') as json_file:
     data = json.load(json_file)
 
 for ticker in data["data"]["rows"]:
-    if path.exists("data/balance-sheet/" + ticker["symbol"] + ".out") and path.exists("data/cash-flow/" + ticker["symbol"] + ".out") and ticker["symbol"] == 'AAPL':
-        market_cap = ticker["marketCap"]
-        df = pd.read_csv("data/income-statement/" + ticker["symbol"] + ".out")
-        total_revenue = df["TotalRevenue"].tail(1).values[::-1][0]
-        df = pd.read_csv("data/balance-sheet/" + ticker["symbol"] + ".out")
-        current_assets = df[["CurrentAssets", "TotalNonCurrentLiabilitiesNetMinorityInterest"]].tail(1).values[::-1][0][0]
-        non_current_liabilities= df[["CurrentAssets", "TotalNonCurrentLiabilitiesNetMinorityInterest"]].tail(1).values[::-1][0][1]
-        df = pd.read_csv("data/cash-flow/" + ticker["symbol"] + ".out")
-        net_income = df["NetIncome"].tail(1).values[::-1][0]
+        if (path.exists("data/income-statement/" + ticker["symbol"] + ".out")
+        and path.exists("data/balance-sheet/" + ticker["symbol"] + ".out") 
+        and path.exists("data/cash-flow/" + ticker["symbol"] + ".out")):
 
-        print("symbol", ticker["symbol"])
-        print("marketcap", ticker["marketCap"])
-        print("lastsale", ticker["lastsale"])
-        print("netincome", net_income)
-        print("currentassets", current_assets)
-        print("noncurrentliabilities", non_current_liabilities)
-        print("totalrevenue", total_revenue)
-        print("marketcap", market_cap)
+            income_statement = pd.read_csv("data/income-statement/" + ticker["symbol"] + ".out")
+            balance_sheet = pd.read_csv("data/balance-sheet/" + ticker["symbol"] + ".out")
+
+        if (ticker["marketCap"] != 0 and ticker["marketCap"] != ""
+        and "TotalRevenue" in income_statement
+        and "NetIncome" in income_statement
+        and "CurrentAssets" in balance_sheet
+        and "TotalNonCurrentLiabilitiesNetMinorityInterest" in balance_sheet):
+
+            market_cap = ticker["marketCap"]
+            total_revenue = income_statement["TotalRevenue"].tail(1).values[::-1][0]
+            current_assets = balance_sheet[["CurrentAssets", "TotalNonCurrentLiabilitiesNetMinorityInterest"]].tail(1).values[::-1][0][0]
+            non_current_liabilities = balance_sheet[["CurrentAssets", "TotalNonCurrentLiabilitiesNetMinorityInterest"]].tail(1).values[::-1][0][1]
+            net_income = income_statement["NetIncome"].tail(1).values[::-1][0]
+
+        if (total_revenue != 0 and total_revenue > 0
+        and current_assets != 0 and current_assets > 0
+        and non_current_liabilities != 0 and non_current_liabilities > 0
+        and net_income != 0 and net_income > 0):
+
+            margins = net_income / total_revenue
+            solvency = current_assets / non_current_liabilities
+            pe_ratio = float(market_cap) / net_income
+            if (float(market_cap) < 5000000000
+            and margins > .25
+            and solvency > 1
+            and pe_ratio < 20):
+                safe[ticker["symbol"]] = "market_cap: " + market_cap + "margins: " + str(margins) + "solvency: " + str(solvency) + "pe_ratio: " + str(pe_ratio)
+    
+for ticker, fundamentals in safe.items():
+    print(ticker)
+    print(fundamentals)
