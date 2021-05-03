@@ -2,6 +2,7 @@
 Prefer smallcap
 Low PE ratio
 Reasonable Debt Ratio
+Find PE ratios that have not appreciated
 '''
 import json
 import pandas as pd
@@ -40,10 +41,10 @@ for ticker in data["data"]["rows"]:
             margins = net_income / total_revenue
             solvency = current_assets / non_current_liabilities
             pe_ratio = float(market_cap) / net_income
-            if (float(market_cap) > 10000000000
-            and margins > .2
-            and solvency > 1
-            and pe_ratio > 1 and pe_ratio < 10):
+            if (
+            margins > .25):
+            #and solvency > 1
+            #and pe_ratio > 1 and pe_ratio < 10):
                 safe[ticker["symbol"]] = "market_cap: " + market_cap + " margins: " + str(margins) + " solvency: " + str(solvency) + " pe_ratio: " + str(pe_ratio)
     
 for ticker, fundamentals in safe.items():
