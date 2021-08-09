@@ -1,4 +1,4 @@
-# reverseion-to-mean-backtesting
+# reversion-to-mean-backtesting
 Backtesting reversion to mean strategy using a sampling of stocks filtered by various financial information and buy/sell triggers.  
 Alphavantage keys gathered from burner emails. Cron used to scrape for historical returns.  
 Income/Financial/Cashflow from yahoo finance scraping.
